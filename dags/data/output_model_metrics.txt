@@ -1,0 +1,2 @@
+Validation Accuracy: 0.6087210434105509
+Validation AUC Score: 0.650616416522117

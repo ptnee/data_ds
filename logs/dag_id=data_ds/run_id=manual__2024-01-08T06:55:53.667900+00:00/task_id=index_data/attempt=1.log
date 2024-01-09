@@ -1,0 +1,60 @@
+[2024-01-08T06:56:03.396+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ds.index_data manual__2024-01-08T06:55:53.667900+00:00 [queued]>
+[2024-01-08T06:56:03.425+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ds.index_data manual__2024-01-08T06:55:53.667900+00:00 [queued]>
+[2024-01-08T06:56:03.427+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 4
+[2024-01-08T06:56:03.453+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): index_data> on 2024-01-08 06:55:53.667900+00:00
+[2024-01-08T06:56:03.472+0000] {standard_task_runner.py:60} INFO - Started process 347 to run task
+[2024-01-08T06:56:03.482+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'data_ds', 'index_data', 'manual__2024-01-08T06:55:53.667900+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/test.py', '--cfg-path', '/tmp/tmps4a4xkze']
+[2024-01-08T06:56:03.499+0000] {standard_task_runner.py:88} INFO - Job 35: Subtask index_data
+[2024-01-08T06:56:03.608+0000] {task_command.py:423} INFO - Running <TaskInstance: data_ds.index_data manual__2024-01-08T06:55:53.667900+00:00 [running]> on host 71a034ea89ba
+[2024-01-08T06:56:03.794+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='cuongthanhhk@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ds' AIRFLOW_CTX_TASK_ID='index_data' AIRFLOW_CTX_EXECUTION_DATE='2024-01-08T06:55:53.667900+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-08T06:55:53.667900+00:00'
+[2024-01-08T06:56:03.805+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-08T06:56:03.808+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/***/dags/index_es/index_to_es.py']
+[2024-01-08T06:56:03.829+0000] {subprocess.py:86} INFO - Output:
+[2024-01-08T06:56:06.721+0000] {subprocess.py:93} INFO - /opt/***/dags/index_es/index_to_es.py:69: DeprecationWarning: Passing transport options in the API method is deprecated. Use 'Elasticsearch.options()' instead.
+[2024-01-08T06:56:06.741+0000] {subprocess.py:93} INFO -   helpers.bulk(es_client, result, index=index_name, request_timeout=200)
+[2024-01-08T06:56:06.745+0000] {subprocess.py:93} INFO -        Unnamed: 0.32  Unnamed: 0.31  ...  REB_away  HOME_TEAM_WINS
+[2024-01-08T06:56:06.746+0000] {subprocess.py:93} INFO - 0                  0              0  ...      46.0               0
+[2024-01-08T06:56:06.749+0000] {subprocess.py:93} INFO - 1                  1              1  ...      40.0               1
+[2024-01-08T06:56:06.750+0000] {subprocess.py:93} INFO - 2                  2              2  ...      47.0               0
+[2024-01-08T06:56:06.751+0000] {subprocess.py:93} INFO - 3                  3              3  ...      39.0               1
+[2024-01-08T06:56:06.753+0000] {subprocess.py:93} INFO - 4                  4              4  ...      50.0               0
+[2024-01-08T06:56:06.754+0000] {subprocess.py:93} INFO - ...              ...            ...  ...       ...             ...
+[2024-01-08T06:56:06.755+0000] {subprocess.py:93} INFO - 27758          27758          27758  ...      48.0               0
+[2024-01-08T06:56:06.757+0000] {subprocess.py:93} INFO - 27759          27759          27759  ...      33.0               1
+[2024-01-08T06:56:06.760+0000] {subprocess.py:93} INFO - 27760          27760          27760  ...      45.0               1
+[2024-01-08T06:56:06.761+0000] {subprocess.py:93} INFO - 27761          27761          27761  ...      42.0               1
+[2024-01-08T06:56:06.763+0000] {subprocess.py:93} INFO - 27762          27762          27762  ...      42.0               0
+[2024-01-08T06:56:06.766+0000] {subprocess.py:93} INFO - 
+[2024-01-08T06:56:06.775+0000] {subprocess.py:93} INFO - [27763 rows x 54 columns]
+[2024-01-08T06:56:06.778+0000] {subprocess.py:93} INFO - Indexing into http://elasticsearch:9200 with index test_data_ds
+[2024-01-08T06:56:06.782+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-01-08T06:56:06.789+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/index_es/index_to_es.py", line 91, in <module>
+[2024-01-08T06:56:06.793+0000] {subprocess.py:93} INFO -     index_data(df)
+[2024-01-08T06:56:06.797+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/index_es/index_to_es.py", line 69, in index_data
+[2024-01-08T06:56:06.800+0000] {subprocess.py:93} INFO -     helpers.bulk(es_client, result, index=index_name, request_timeout=200)
+[2024-01-08T06:56:06.804+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/elasticsearch/helpers/actions.py", line 521, in bulk
+[2024-01-08T06:56:06.809+0000] {subprocess.py:93} INFO -     for ok, item in streaming_bulk(
+[2024-01-08T06:56:06.812+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/elasticsearch/helpers/actions.py", line 436, in streaming_bulk
+[2024-01-08T06:56:06.818+0000] {subprocess.py:93} INFO -     for data, (ok, info) in zip(
+[2024-01-08T06:56:06.821+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/elasticsearch/helpers/actions.py", line 355, in _process_bulk_chunk
+[2024-01-08T06:56:06.826+0000] {subprocess.py:93} INFO -     yield from gen
+[2024-01-08T06:56:06.830+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/elasticsearch/helpers/actions.py", line 274, in _process_bulk_chunk_success
+[2024-01-08T06:56:06.832+0000] {subprocess.py:93} INFO -     raise BulkIndexError(f"{len(errors)} document(s) failed to index.", errors)
+[2024-01-08T06:56:06.835+0000] {subprocess.py:93} INFO - elasticsearch.helpers.BulkIndexError: 500 document(s) failed to index.
+[2024-01-08T06:56:07.175+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-01-08T06:56:07.207+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-01-08T06:56:07.216+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=data_ds, task_id=index_data, execution_date=20240108T065553, start_date=20240108T065603, end_date=20240108T065607
+[2024-01-08T06:56:07.251+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/email.py:154: RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+  send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+
+[2024-01-08T06:56:07.256+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2024-01-08T06:56:08.614+0000] {email.py:281} INFO - Sent an alert email to ['cuongthanhhk@gmail.com']
+[2024-01-08T06:56:10.177+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 35 for task index_data (Bash command failed. The command returned a non-zero exit code 1.; 347)
+[2024-01-08T06:56:10.209+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-01-08T06:56:10.317+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

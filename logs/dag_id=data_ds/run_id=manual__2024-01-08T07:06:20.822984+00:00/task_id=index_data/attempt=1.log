@@ -1,0 +1,62 @@
+[2024-01-08T07:06:29.586+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ds.index_data manual__2024-01-08T07:06:20.822984+00:00 [queued]>
+[2024-01-08T07:06:29.592+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ds.index_data manual__2024-01-08T07:06:20.822984+00:00 [queued]>
+[2024-01-08T07:06:29.594+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 4
+[2024-01-08T07:06:29.603+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): index_data> on 2024-01-08 07:06:20.822984+00:00
+[2024-01-08T07:06:29.609+0000] {standard_task_runner.py:60} INFO - Started process 529 to run task
+[2024-01-08T07:06:29.613+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'data_ds', 'index_data', 'manual__2024-01-08T07:06:20.822984+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/test.py', '--cfg-path', '/tmp/tmpudhvezgz']
+[2024-01-08T07:06:29.616+0000] {standard_task_runner.py:88} INFO - Job 40: Subtask index_data
+[2024-01-08T07:06:29.655+0000] {task_command.py:423} INFO - Running <TaskInstance: data_ds.index_data manual__2024-01-08T07:06:20.822984+00:00 [running]> on host 71a034ea89ba
+[2024-01-08T07:06:29.708+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='cuongthanhhk@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ds' AIRFLOW_CTX_TASK_ID='index_data' AIRFLOW_CTX_EXECUTION_DATE='2024-01-08T07:06:20.822984+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-08T07:06:20.822984+00:00'
+[2024-01-08T07:06:29.711+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-08T07:06:29.713+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/***/dags/index_es/index_to_es.py']
+[2024-01-08T07:06:29.731+0000] {subprocess.py:86} INFO - Output:
+[2024-01-08T07:06:33.931+0000] {subprocess.py:93} INFO - /opt/***/dags/index_es/index_to_es.py:69: DeprecationWarning: Passing transport options in the API method is deprecated. Use 'Elasticsearch.options()' instead.
+[2024-01-08T07:06:33.939+0000] {subprocess.py:93} INFO -   helpers.bulk(es_client, result, index=index_name, request_timeout=200)
+[2024-01-08T07:06:33.942+0000] {subprocess.py:93} INFO - /opt/***/dags/index_es/index_to_es.py:76: DeprecationWarning: Passing transport options in the API method is deprecated. Use 'Elasticsearch.options()' instead.
+[2024-01-08T07:06:33.943+0000] {subprocess.py:93} INFO -   helpers.bulk(es_client, result, index=index_name, request_timeout=200)
+[2024-01-08T07:06:33.947+0000] {subprocess.py:93} INFO -              GAME_DATE_EST   GAME_ID  ... REB_away  HOME_TEAM_WINS
+[2024-01-08T07:06:33.950+0000] {subprocess.py:93} INFO - 0               2022-03-12  22101005  ...     46.0               0
+[2024-01-08T07:06:33.953+0000] {subprocess.py:93} INFO - 1               2022-03-12  22101006  ...     40.0               1
+[2024-01-08T07:06:33.960+0000] {subprocess.py:93} INFO - 2               2022-03-12  22101007  ...     47.0               0
+[2024-01-08T07:06:33.963+0000] {subprocess.py:93} INFO - 3               2022-03-12  22101008  ...     39.0               1
+[2024-01-08T07:06:33.966+0000] {subprocess.py:93} INFO - 4               2022-03-12  22101009  ...     50.0               0
+[2024-01-08T07:06:33.971+0000] {subprocess.py:93} INFO - ...                    ...       ...  ...      ...             ...
+[2024-01-08T07:06:33.976+0000] {subprocess.py:93} INFO - 27758  2023-10-28 00:00:00  22300091  ...     48.0               0
+[2024-01-08T07:06:33.988+0000] {subprocess.py:93} INFO - 27759  2023-10-28 00:00:00  22300088  ...     33.0               1
+[2024-01-08T07:06:33.995+0000] {subprocess.py:93} INFO - 27760  2023-10-28 00:00:00  22300094  ...     45.0               1
+[2024-01-08T07:06:34.001+0000] {subprocess.py:93} INFO - 27761  2023-10-28 00:00:00  22300093  ...     42.0               1
+[2024-01-08T07:06:34.007+0000] {subprocess.py:93} INFO - 27762  2023-10-28 00:00:00  22300092  ...     42.0               0
+[2024-01-08T07:06:34.011+0000] {subprocess.py:93} INFO - 
+[2024-01-08T07:06:34.012+0000] {subprocess.py:93} INFO - [27763 rows x 21 columns]
+[2024-01-08T07:06:34.015+0000] {subprocess.py:93} INFO - Indexing into http://elasticsearch:9200 with index test_data_ds
+[2024-01-08T07:06:34.019+0000] {subprocess.py:93} INFO - batch 1
+[2024-01-08T07:06:34.021+0000] {subprocess.py:93} INFO - batch 2
+[2024-01-08T07:06:34.025+0000] {subprocess.py:93} INFO - batch 3
+[2024-01-08T07:06:34.028+0000] {subprocess.py:93} INFO - batch 4
+[2024-01-08T07:06:34.032+0000] {subprocess.py:93} INFO - batch 5
+[2024-01-08T07:06:34.035+0000] {subprocess.py:93} INFO - batch 6
+[2024-01-08T07:06:34.037+0000] {subprocess.py:93} INFO - batch 7
+[2024-01-08T07:06:34.039+0000] {subprocess.py:93} INFO - batch 8
+[2024-01-08T07:06:34.045+0000] {subprocess.py:93} INFO - batch 9
+[2024-01-08T07:06:34.049+0000] {subprocess.py:93} INFO - batch 10
+[2024-01-08T07:06:34.050+0000] {subprocess.py:93} INFO - batch 11
+[2024-01-08T07:06:34.052+0000] {subprocess.py:93} INFO - batch 12
+[2024-01-08T07:06:34.054+0000] {subprocess.py:93} INFO - batch 13
+[2024-01-08T07:06:34.058+0000] {subprocess.py:93} INFO - batch 14
+[2024-01-08T07:06:34.081+0000] {subprocess.py:93} INFO - batch 15
+[2024-01-08T07:06:34.084+0000] {subprocess.py:93} INFO - batch 16
+[2024-01-08T07:06:34.086+0000] {subprocess.py:93} INFO - batch 17
+[2024-01-08T07:06:34.086+0000] {subprocess.py:93} INFO - batch 18
+[2024-01-08T07:06:34.087+0000] {subprocess.py:93} INFO - batch 19
+[2024-01-08T07:06:34.088+0000] {subprocess.py:93} INFO - batch 20
+[2024-01-08T07:06:34.089+0000] {subprocess.py:93} INFO - batch 21
+[2024-01-08T07:06:34.090+0000] {subprocess.py:93} INFO - batch 22
+[2024-01-08T07:06:34.093+0000] {subprocess.py:93} INFO - batch 23
+[2024-01-08T07:06:34.096+0000] {subprocess.py:93} INFO - batch 24
+[2024-01-08T07:06:34.098+0000] {subprocess.py:93} INFO - batch 25
+[2024-01-08T07:06:34.099+0000] {subprocess.py:93} INFO - 25
+[2024-01-08T07:06:34.100+0000] {subprocess.py:93} INFO - done
+[2024-01-08T07:06:34.207+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-08T07:06:34.317+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=data_ds, task_id=index_data, execution_date=20240108T070620, start_date=20240108T070629, end_date=20240108T070634
+[2024-01-08T07:06:34.388+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-08T07:06:34.459+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

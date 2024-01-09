@@ -1,0 +1,17 @@
+[2024-01-08T06:47:13.131+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ds.send_email_task manual__2024-01-08T06:47:01.496371+00:00 [queued]>
+[2024-01-08T06:47:13.145+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ds.send_email_task manual__2024-01-08T06:47:01.496371+00:00 [queued]>
+[2024-01-08T06:47:13.147+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 2
+[2024-01-08T06:47:13.170+0000] {taskinstance.py:2192} INFO - Executing <Task(EmailOperator): send_email_task> on 2024-01-08 06:47:01.496371+00:00
+[2024-01-08T06:47:13.187+0000] {standard_task_runner.py:60} INFO - Started process 205 to run task
+[2024-01-08T06:47:13.205+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'data_ds', 'send_email_task', 'manual__2024-01-08T06:47:01.496371+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/test.py', '--cfg-path', '/tmp/tmplpa1sth1']
+[2024-01-08T06:47:13.216+0000] {standard_task_runner.py:88} INFO - Job 33: Subtask send_email_task
+[2024-01-08T06:47:13.295+0000] {task_command.py:423} INFO - Running <TaskInstance: data_ds.send_email_task manual__2024-01-08T06:47:01.496371+00:00 [running]> on host 71a034ea89ba
+[2024-01-08T06:47:13.393+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='cuongthanhhk@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ds' AIRFLOW_CTX_TASK_ID='send_email_task' AIRFLOW_CTX_EXECUTION_DATE='2024-01-08T06:47:01.496371+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-08T06:47:01.496371+00:00'
+[2024-01-08T06:47:13.432+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/email.py:154: RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+  send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+
+[2024-01-08T06:47:13.435+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2024-01-08T06:47:14.745+0000] {email.py:281} INFO - Sent an alert email to ['cuongthanhhk@gmail.com']
+[2024-01-08T06:47:16.418+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=data_ds, task_id=send_email_task, execution_date=20240108T064701, start_date=20240108T064713, end_date=20240108T064716
+[2024-01-08T06:47:16.539+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-08T06:47:16.682+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check
